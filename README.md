@@ -1,2 +1,3 @@
-# docker-sshd
+# Dockerize sshd
+
 Container with sshd service
