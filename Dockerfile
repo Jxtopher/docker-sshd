@@ -1,6 +1,3 @@
-# docker build . --tag srv
-# docker run -d -p 2222:22 --name srv srv
-# ssh -i.\.ssh\id_rsa guest@192.168.0.151 -p 2222
 FROM debian:sid
 
 ENV DEBIAN_FRONTEND noninteractive
