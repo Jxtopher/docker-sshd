@@ -17,4 +17,4 @@ RUN mkdir -p /run/sshd \
 
 COPY --chown=guest:guest authorized_keys /home/guest/.ssh/authorized_keys
 
-ENTRYPOINT /usr/sbin/sshd -E /var/log/auth.log && tail -f /var/log/auth.log
+ENTRYPOINT ["/bin/sh","-c", "/usr/sbin/sshd -E /var/log/auth.log && tail -f /var/log/auth.log"]
