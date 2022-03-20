@@ -9,12 +9,12 @@ cat ~/.ssh/id_rsa > authorized_keys
 
 Build the image
 ```bash
-docker build . --tag srv
+docker build . --tag sshd
 ```
 
 Launch the container in background
 ```bash
-docker run -d -p 2222:22 --name srv srv
+docker run -d -p 2222:22 --name sshd sshd
 ```
 
 Connect in ssh to the container
