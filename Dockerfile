@@ -10,7 +10,8 @@ RUN apt-get update -qq \
 RUN mkdir -p /run/sshd \
     && useradd -m -s /bin/bash guest \
     && echo "guest    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
-    && echo "guest:password" | chpasswd
+    && echo "guest:password" | chpasswd \
+    && ssh-keygen -t rsa -b 4096 -q -f "/home/guest/.ssh/id_rsa" -N ""
 
 COPY --chown=guest:guest authorized_keys /home/guest/.ssh/authorized_keys
 
