@@ -7,7 +7,8 @@ RUN apt-get update -qq \
     && apt-get install --no-install-recommends -y openssh-server sudo vim ca-certificates git \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /run/sshd \
+RUN set -euo pipefail \
+    && mkdir -p /run/sshd \
     && useradd -m -s /bin/bash guest \
     && echo "guest    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
     && echo "guest:password" | chpasswd \
