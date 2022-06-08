@@ -6,12 +6,12 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -qq \
     && apt-get install --no-install-recommends -y openssh-server sudo vim ca-certificates git \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN mkdir -p /run/sshd \
+    && mkdir -p /run/sshd \
     && useradd -m -s /bin/bash guest \
     && echo "guest    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
     && echo "guest:password" | chpasswd \
     && ssh-keygen -t rsa -b 4096 -q -f "/home/guest/.ssh/id_rsa" -N ""
+    && chmod 660 /etc/sudoers && echo "user ALL=NOPASSWD: ALL" >> /etc/sudoers && chmod 400 /etc/sudoers
 
 COPY --chown=guest:guest authorized_keys /home/guest/.ssh/authorized_keys
 
