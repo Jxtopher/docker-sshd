@@ -1,4 +1,4 @@
-FROM debian:sid
+FROM debian:latest
 
 ENV DEBIAN_FRONTEND noninteractive
 
