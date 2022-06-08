@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # hadolint ignore=DL3008,DL3042
 RUN apt-get update -qq \
     && apt-get install --no-install-recommends -y openssh-server sudo vim ca-certificates git \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /run/sshd \
     && useradd -m -s /bin/bash guest \
     && echo "guest    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
