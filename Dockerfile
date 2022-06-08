@@ -10,7 +10,7 @@ RUN apt-get update -qq \
     && useradd -m -s /bin/bash guest \
     && echo "guest    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
     && echo "guest:password" | chpasswd \
-    && ssh-keygen -t rsa -b 4096 -q -f "/home/guest/.ssh/id_rsa" -N ""
+    && ssh-keygen -t rsa -b 4096 -q -f "/home/guest/.ssh/id_rsa" -N "" \
     && chmod 660 /etc/sudoers && echo "user ALL=NOPASSWD: ALL" >> /etc/sudoers && chmod 400 /etc/sudoers
 
 COPY --chown=guest:guest authorized_keys /home/guest/.ssh/authorized_keys
