@@ -19,5 +19,3 @@ COPY --chown=guest:guest authorized_keys /home/guest/.ssh/authorized_keys
 EXPOSE 22/tcp
 
 ENTRYPOINT ["/bin/sh","-c", "/usr/sbin/sshd -E /var/log/auth.log && tail -f /var/log/auth.log"]
-
-USER guest
