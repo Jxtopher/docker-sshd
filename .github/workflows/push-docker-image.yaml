@@ -1,6 +1,6 @@
 name: Push docker image
 
-on: [pull_request]
+on: [push]
 
 env:
   DOCKER_USER: ${{secrets.DOCKER_USER}}
