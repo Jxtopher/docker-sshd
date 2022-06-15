@@ -1,6 +1,6 @@
 name: Push docker image
 
-on: [pull_request]
+on: [push]
 
 env:
   DOCKER_USER: ${{secrets.DOCKER_USER}}
@@ -21,3 +21,4 @@ jobs:
       run: docker build . --file Dockerfile --tag $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
     - name: Docker Push
       run: docker push $DOCKER_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+      run: docker push $DOCKER_USER/$REPO_NAME:latest
