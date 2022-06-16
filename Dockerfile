@@ -2,6 +2,8 @@ FROM debian:sid
 
 ENV DEBIAN_FRONTEND noninteractive
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 # hadolint ignore=DL3008,DL3042
 RUN apt-get update -qq \
     && apt-get install --no-install-recommends -y openssh-server sudo vim ca-certificates git \
