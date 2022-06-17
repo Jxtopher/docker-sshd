@@ -1,5 +1,4 @@
-# Dockerize sshd
-[![lint](https://github.com/infraworks/docker-sshd/actions/workflows/lint.yml/badge.svg)](https://github.com/infraworks/docker-sshd/actions/workflows/lint.yml)
+# Dockerize sshd [![lint](https://github.com/infraworks/docker-sshd/actions/workflows/lint.yml/badge.svg)](https://github.com/infraworks/docker-sshd/actions/workflows/lint.yml)
 
 Container with sshd service
 
