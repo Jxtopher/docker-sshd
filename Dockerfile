@@ -11,7 +11,7 @@ RUN apt-get update -qq \
     && mkdir -p /run/sshd \
     && useradd -m -s /bin/bash guest \
     && echo "guest    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
-    && echo "guest:password" | chpasswd \
+    && echo "guest:guest" | chpasswd \
     && mkdir -p /home/guest/.ssh/ \
     && ssh-keygen -t rsa -b 4096 -q -f "/home/guest/.ssh/id_rsa" -N "" \
     && chmod 660 /etc/sudoers && echo "user ALL=NOPASSWD: ALL" >> /etc/sudoers && chmod 400 /etc/sudoers
