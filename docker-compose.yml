@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  sshd:
+    image: jxtopher/sshd:${SSHD_VERSION:-latest}
+    container_name: ${PIPELINE:-staging}-sshd
+    hostname: ${PIPELINE:-staging}-sshd
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
