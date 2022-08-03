@@ -1,5 +1,7 @@
 FROM alpine:latest
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 # hadolint ignore=DL3008,DL3042
 RUN apk add --no-cache openssh ca-certificates sudo vim        \
     && addgroup -S user && adduser -S user -G user -s /bin/ash \
