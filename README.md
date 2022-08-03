@@ -20,5 +20,5 @@ docker run -d -p 2222:22 --name sshd sshd
 Connect in ssh to the container
 
 ```bash
-ssh -i ~/.ssh/id_rsa guest@192.168.0.151 -p 2222
+ssh -i ~/.ssh/id_rsa guest@xxx.xxx.xxx.xxx -p 2222
 ```
