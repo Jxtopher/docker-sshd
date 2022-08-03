@@ -12,7 +12,7 @@ RUN apk add --no-cache openssh ca-certificates sudo vim        \
     && ssh-keygen -t rsa -b 4096 -q -f "/home/user/.ssh/id_rsa" -N "" \
     && /usr/bin/ssh-keygen -A                                   
 
-COPY --chown=guest:guest authorized_keys /home/guest/.ssh/authorized_keys
+COPY --chown=user:user authorized_keys /home/guest/.ssh/authorized_keys
 
 EXPOSE 22/tcp
 
