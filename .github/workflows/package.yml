@@ -29,6 +29,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/sshd:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/sshd:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/sshd:buildcache,mode=max
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sshd:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/sshd:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/sshd:buildcache,mode=max
