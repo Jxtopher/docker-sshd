@@ -14,4 +14,4 @@ jobs:
         run: docker run --rm -i hadolint/hadolint < Dockerfile
         
       # - name: Check docker-compose
-      #   run: docker-compose -f docker-compose.yml config
+      #   run: docker compose -f docker-compose.yml config
