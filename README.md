@@ -4,7 +4,7 @@ Container with sshd service
 
 Add your pub key in authorized_keys file
 ```bash
-cat ~/.ssh/id_rsa > authorized_keys
+cat ~/.ssh/id_ed25519 > authorized_keys
 ```
 
 Build the image

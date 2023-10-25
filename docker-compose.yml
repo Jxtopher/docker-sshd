@@ -7,3 +7,5 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 10200:22
